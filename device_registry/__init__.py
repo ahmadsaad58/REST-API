@@ -45,3 +45,40 @@ class DeviceList(Resource):
 			devices.append(shelf[key])
 
 		return {'message': 'Success', 'data': devices}, 200
+
+	def post(self):
+		parser = reqparse.RequestParser()
+
+		parser.add_argument('identifier', required=True)
+		parser.add_argument('name', required=True)
+		parser.add_argument('device_type', required=True)
+		parser.add_argument('controller_gateway', required=True)
+
+		args = parser.parse_args()
+
+		shelf = get_db()
+		shelf[args['identifier']] = args
+
+		return {'message': "Device registered", "data": args}, 201
+
+class Device(Resource):
+	def get(self, identifier):
+		shelf = get_db()
+
+		if identifier not in shelf: 
+			return {'message': "Device not found", "data": {}}, 404
+		
+		return {'message': "Device found", "data": shelf[identifier]}, 200
+
+	def delete(self, identifier):
+		shelf = get_db()
+		
+		if identifier not in shelf:
+			return {'message': 'Device not found', 'data': {}}, 404
+		
+		del shelf[identifier]
+		return '', 204
+
+
+api.add_resource(DeviceList, '/devices')
+api.add_resource(Device, '/device/<string:identifier>')
