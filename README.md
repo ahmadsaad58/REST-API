@@ -70,9 +70,11 @@ If a device with the given identifier already exists, the existing device will b
 ### Lookup device details 
 
 **Definition**
-`Get /device/<identifier>`
+
+`GET /device/<identifier>`
 
 **Response**
+
 - `404 Not Found` if the device does not exist
 - `200 OK` on success 
 
@@ -84,6 +86,17 @@ If a device with the given identifier already exists, the existing device will b
 	"controller_gateway": "192.168.0.2"
 }
 ```
+
+### Delete a device
+
+**Definition**
+
+`DELETE /device/<identifier>`
+
+**Response**
+
+- `404 Not Found` if the device does not exist
+- `204 No Content` on success 
 
 
 
