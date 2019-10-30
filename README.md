@@ -31,7 +31,7 @@ Subsequent response definitions will only detail the expected value of the 'data
 		"name": "Floor Lamp", 
 		"device_type": "switch", 
 		"controller_gateway": "192.168.0.2"
-	}, 
+	},
 	{
 		"identifier": "tv",
 		"name": "Living Room TV", 
