@@ -1,7 +1,5 @@
-# REST-API
-REST API created in Python
-
 # Device Registry Service 
+REST API Created in Python
 
 All responses will have the form 
 
@@ -25,7 +23,7 @@ Subsequent response definitions will only detail the expected value of the 'data
 - `200 OK` on success
 
 ```json 
-{
+[
 	{
 		"identifier": "floor-lamp",
 		"name": "Floor Lamp", 
@@ -38,7 +36,7 @@ Subsequent response definitions will only detail the expected value of the 'data
 		"device_type": "tv", 
 		"controller_gateway": "192.168.0.9"
 	}
-}
+]
 ```
 
 ### Registering a new device 
