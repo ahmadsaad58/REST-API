@@ -62,12 +62,10 @@ If a device with the given identifier already exists, the existing device will b
 
 ```json 
 {
-	{
-		"identifier": "floor-lamp",
-		"name": "Floor Lamp", 
-		"device_type": "switch", 
-		"controller_gateway": "192.168.0.2"
-	}
+	"identifier": "floor-lamp",
+	"name": "Floor Lamp", 
+	"device_type": "switch", 
+	"controller_gateway": "192.168.0.2"
 }
 ```
 
