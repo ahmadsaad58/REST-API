@@ -16,7 +16,7 @@ Subsequent response definitions will only detail the expected value of the 'data
 
 **Defintion**
 
-`Get  /devices`
+`GET  /devices`
 
 **Response**
 
@@ -43,7 +43,7 @@ Subsequent response definitions will only detail the expected value of the 'data
 
 **Definition**
 
-`Post /devices`
+`POST /devices`
 
 **Arguments**
 
@@ -56,7 +56,7 @@ If a device with the given identifier already exists, the existing device will b
 
 **Response**
 
--`201 Created`
+-`201 Created` on success
 
 ```json 
 {
@@ -66,5 +66,24 @@ If a device with the given identifier already exists, the existing device will b
 	"controller_gateway": "192.168.0.2"
 }
 ```
+
+### Lookup device details 
+
+**Definition**
+`Get /device/<identifier>`
+
+**Response**
+- `404 Not Found` if the device does not exist
+- `200 OK` on success 
+
+```json 
+{
+	"identifier": "floor-lamp",
+	"name": "Floor Lamp", 
+	"device_type": "switch", 
+	"controller_gateway": "192.168.0.2"
+}
+```
+
 
 
